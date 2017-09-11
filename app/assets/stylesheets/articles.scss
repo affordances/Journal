@@ -1,0 +1,47 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// #posts {
+//   width: 50%;
+// }
+
+body {
+  background-color: #F0F3F7;
+}
+
+textarea {
+    width: 50%;
+    height: 150px;
+    outline: none;
+    resize: none;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.post {
+  width: 50%;
+  padding: 10px;
+}
+
+.post-title {
+  font-weight: bold;
+}
+
+a, a:visited {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+a:hover {
+    color: #00FFFF;
+}
