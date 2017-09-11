@@ -4,7 +4,7 @@
 
   <% @articles.each do |article| %>
 
-    <div class="post">
+    <div class="post"  id="<%= @article.id %>">
 
       <div class="post-content">
         <%= article.text %>
@@ -13,10 +13,8 @@
       <div class="post-timestamp">
         <%= link_to article.updated_at.strftime("%B%e"),
             article_path(article) %>
-            <%= link_to 'Edit', edit_article_path(article) %>
-            <%= 'Destroy',
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
+            <%= link_to 'Edit', edit_article_path(article), :remote => true %>
+
       </div>
 
     </div>
