@@ -1,5 +1,5 @@
-var form = "<%=j render 'form' %>";
+var form = "<%=j render partial: 'form', locals: {remote: true} %>";
 
 var elt = document.getElementById('<%= @article.id %>');
 
-elt.outerHTML = form;
+elt.innerHTML = form;

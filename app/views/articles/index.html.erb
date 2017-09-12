@@ -1,23 +1,10 @@
-<%= render 'form' %>
+<%= render partial: 'form', locals: {remote: false}%>
 
 <div id="posts">
 
   <% @articles.each do |article| %>
 
-    <div class="post"  id="<%= article.id %>">
-
-      <div class="post-content">
-        <%= article.text %>
-      </div>
-
-      <div class="post-timestamp">
-        <%= link_to article.updated_at.strftime("%B%e"),
-            article_path(article) %>
-            <%= link_to 'Edit', edit_article_path(article), :remote => true %>
-
-      </div>
-
-    </div>
+    <%= render partial: 'post', locals: {article: article} %>
 
   <% end %>
 

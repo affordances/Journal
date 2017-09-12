@@ -1,0 +1,5 @@
+var list_element = "<%=j render partial: 'post', locals: {article: @article} %>";
+
+var elt = document.getElementById('<%= @article.id %>');
+
+elt.outerHTML = list_element;
