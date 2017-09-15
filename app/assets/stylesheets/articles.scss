@@ -2,46 +2,126 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// #posts {
-//   width: 50%;
-// }
+@import "font-awesome";
 
 body {
   background-color: #F0F3F7;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px
 }
 
 textarea {
-    width: 50%;
-    height: 150px;
-    outline: none;
-    resize: none;
+  width: 50%;
+  height: 150px;
+  border: 1px solid #C2C6CF;
+  border-radius: 3px;
+  font-size: 16px;
+  resize: none;
+  padding: 20px 20px;
+  font-weight: 100;
+  -webkit-box-sizing: border-box;
 }
 
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+textarea:focus {
+  border: 1px solid #B2C6EF;
+  font-weight: 100;
+  outline: none;
+}
+
+.save-button {
+  background-color: #54C271;
+  color: white;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.save-button:hover {
+  background-color: #6DD87B;
+  color: #ECFAEF;
+}
+
+.save-button:disabled {
+  background-color: #E6E9EE;
+  color: #859E96;
+}
+
+.cancel-button {
+  background-color: #F0F3F7;
+  outline: none;
+  border: #C2C6CF;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #202327;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.cancel-button:hover {
+  background-color: #E8EAEF;
+  color: black;
+}
+
+.buttons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.timestamp {
+  display: inline-block;
+  font-size: 18px;
+}
+
+.pencil {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  visibility: hidden;
+}
+
+.trash {
+  display: inline-block;
+  visibility: hidden;
 }
 
 .post {
   width: 50%;
-  padding: 10px;
+  padding: 20px;
 }
 
-.post-title {
-  font-weight: bold;
+.post:hover {
+  background-color: #E6E9EE;
+}
+
+.post:hover .pencil {
+  visibility: visible;
+}
+
+.post:hover .trash {
+  visibility: visible;
+}
+
+.post-content {
+  padding-top: 20px;
+  font-size: 17px;
 }
 
 a, a:visited {
-  color: #0000FF;
+  color: #859E96;
   text-decoration: none;
 }
 
 a:hover {
-    color: #00FFFF;
+    color: #5D6E69;
 }

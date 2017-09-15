@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function checkForEmpty(textarea, button) {
+  if (textarea.value.length > 0) {
+    document.getElementById(button).disabled = false;
+  }
+}

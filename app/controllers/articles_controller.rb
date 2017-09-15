@@ -3,18 +3,27 @@ class ArticlesController < ApplicationController
   # http_basic_authenticate_with name: "dhh", password: "secret",
   #                              except: [:index, :show]
 
+  before_action :cancel, only: [:create, :update]
+
+  def cancel
+    if params[:commit] == 'Cancel'
+      if params[:id]
+        @article = Article.find(params[:id])
+        render 'update'
+      else
+        redirect_to action: 'index'
+      end
+    end
+  end
+
   def index
-    @articles = Article.all.order("id DESC").all
+    @articles = Article.all.order('id DESC').all
     @article = Article.new
   end
 
   def show
     @article = Article.find(params[:id])
   end
-
-  # def new
-  #   @article = Article.new
-  # end
 
   def edit
     @article = Article.find(params[:id])
@@ -24,7 +33,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to action: :index
+      redirect_to action: 'index'
     else
       render 'new'
     end
@@ -33,10 +42,17 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 
-    if @article.update(article_params)
-      redirect_to @article
-    else
-      render 'edit'
+    respond_to do |format|
+      format.html {
+        if @article.update(article_params)
+          redirect_to @article
+        else
+          render 'edit'
+        end
+      }
+      format.js {
+        @article.update(article_params)
+      }
     end
   end
 

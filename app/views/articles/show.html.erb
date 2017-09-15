@@ -1,18 +1,3 @@
-<div class="post">
-
-  <div class="post-content">
-    <%= @article.text %>
-  </div>
-
-  <div class="post-timestamp">
-    <%= link_to @article.updated_at.strftime("%B%e"),
-        article_path(@article) %>
-    <%= link_to 'Edit', edit_article_path(@article) %>
-    <%= link_to 'Destroy', article_path(@article),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-  </div>
-
-</div>
+<%= render partial: 'post', locals: { article: @article } %>
 
 <%= link_to 'Back', articles_path %>

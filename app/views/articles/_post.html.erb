@@ -1,0 +1,28 @@
+<div class="post"  id="<%= article.id %>">
+
+  <div class "post-links">
+
+    <div class="timestamp">
+      <%= link_to article.created_at.strftime("%B %e"),
+          article_path(article) %>
+    </div>
+
+    <div class="pencil">
+      <%= link_to ('<i class="fa fa-pencil"></i>').html_safe,
+          edit_article_path(article), remote: true %>
+    </div>
+
+    <div class="trash">
+      <%= link_to ('<i class="fa fa-trash-o"></i>').html_safe,
+          article_path(article),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+    </div>
+
+  </div>
+
+  <div class="post-content">
+    <%= article.text %>
+  </div>
+
+</div>
