@@ -4,4 +4,7 @@ var post = "<%=j render partial: 'post', locals: { article: @article } %>";
 
 posts.innerHTML = post + posts.innerHTML;
 document.getElementById("new_article").reset();
-document.getElementById("new_article_button").disabled = true;
+
+setTimeout(function () {
+  document.getElementById("new_article_button").disabled = true;
+}, 0);
