@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to action: 'index'
     else
-      render 'new'
+      redirect_to action: 'index'
     end
   end
 
@@ -58,9 +58,17 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
 
-    redirect_to articles_path
+    respond_to do |format|
+      format.html {
+        @article.destroy
+
+        redirect_to articles_path
+      }
+      format.js {
+        @article.destroy
+      }
+    end
   end
 
   private

@@ -1,0 +1,5 @@
+var posts = document.getElementById('posts')
+
+var post = "<%=j render partial: 'post', locals: { article: @article } %>";
+
+posts.addChild(post);

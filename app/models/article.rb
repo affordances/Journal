@@ -1,4 +1,3 @@
 class Article < ApplicationRecord
-  validates :text, presence: true,
-                    length: { minimum: 5 }
+  validates :text, presence: true, allow_blank: false
 end

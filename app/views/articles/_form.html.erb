@@ -1,6 +1,6 @@
 <%= form_for @article, remote: remote do |f| %>
 
-  <% if @article.errors.any? %>
+  <!-- <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@article.errors.count, "error") %> prohibited
@@ -12,17 +12,17 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> -->
 
   <div>
-    <%= f.text_area :text, onkeyup: 'checkForEmpty(this, ' +
+    <%= f.text_area :text, onkeyup: 'checkForEntry(this, ' +
         (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
   </div>
 
   <div class="buttons">
     <%= f.submit 'Save', id: @article.id || 'new_article_button',
         class: 'save-button', disabled: true %>
-    <%= f.submit 'Cancel', class: 'cancel-button' %>
+    <%= f.submit 'Cancel', class: 'cancel-button'%>
   </div>
 
 <% end %>
