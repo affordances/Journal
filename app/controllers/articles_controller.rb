@@ -32,10 +32,10 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    if @article.save
-      redirect_to action: 'index'
-    else
-      redirect_to action: 'index'
+    @article.save
+    respond_to do |format|
+      format.html { redirect_to action: 'index' }
+      format.js {}
     end
   end
 

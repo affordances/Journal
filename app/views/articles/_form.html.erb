@@ -1,4 +1,4 @@
-<%= form_for @article, remote: remote do |f| %>
+<%= form_for @article, remote: true do |f| %>
 
   <!-- <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -21,8 +21,10 @@
 
   <div class="buttons">
     <%= f.submit 'Save', id: @article.id || 'new_article_button',
-        class: 'save-button', disabled: true %>
-    <%= f.submit 'Cancel', class: 'cancel-button'%>
+        class: 'save-button', disabled: true, remote: true %>
+    <%= f.submit 'Cancel', class: 'cancel-button',
+        type: @article.id ? 'submit' : 'reset',
+        onclick: 'document.getElementById("new_article_button").disabled = true' %>
   </div>
 
 <% end %>
