@@ -1,5 +1,5 @@
 module ArticlesHelper
   def tag_links(tags)
-    tags.split(",").map { |tag| link_to tag.strip, tag_path(tag.strip) }.join(", ")
+    tags.map { |tag| link_to '#' + tag, tag_path(tag) }.join(' ')
   end
 end
