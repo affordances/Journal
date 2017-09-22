@@ -14,10 +14,10 @@
     </div>
   <% end %> -->
 
-  <div>
-    <%= f.text_area :text, onkeyup: 'checkForEntry(this, ' +
-        (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
-  </div>
+  <%= f.text_area :text, onkeyup: 'checkForEntry(this, ' +
+      (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
+
+  <%= f.text_field :all_tags, placeholder: '#' %>
 
   <div class="buttons">
     <%= f.submit 'Save', id: @article.id || 'new_article_button',

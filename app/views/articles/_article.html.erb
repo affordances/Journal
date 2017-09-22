@@ -1,6 +1,6 @@
-<div class="post"  id="<%= article.id %>">
+<div class="article"  id="<%= article.id %>">
 
-  <div class "post-links">
+  <div class "article-links">
 
     <div class="timestamp">
       <%= link_to article.created_at.strftime("%B %e"),
@@ -22,8 +22,12 @@
 
   </div>
 
-  <div class="post-content">
+  <div class="article-content">
     <%= article.text.gsub("\n", "<br />").html_safe %>
+  </div>
+
+  <div class="tags">
+    <%=raw tag_links(article.all_tags)%>
   </div>
 
 </div>

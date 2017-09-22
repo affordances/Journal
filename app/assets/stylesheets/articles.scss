@@ -18,8 +18,8 @@ form {
 textarea {
   width: 50%;
   height: 150px;
-  border: 1px solid #C2C6CF;
-  border-radius: 3px;
+  border: none;
+  // border-radius: 3px;
   font-size: 16px;
   resize: none;
   padding: 20px 20px;
@@ -28,9 +28,33 @@ textarea {
 }
 
 textarea:focus {
-  border: 1px solid #B2C6EF;
+  border: none;
   font-weight: 100;
   outline: none;
+}
+
+input {
+  width: 50%;
+  height: 20px;
+  border: none;
+  // border-radius: 3px;
+  font-size: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  resize: none;
+  font-weight: 100;
+  -webkit-box-sizing: border-box;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+::placeholder {
+  color: #859E96;
 }
 
 .save-button {
@@ -103,24 +127,24 @@ textarea:focus {
   visibility: hidden;
 }
 
-.post {
+.article {
   width: 50%;
   padding: 20px;
 }
 
-// .post:hover {
+// .article:hover {
 //   background-color: #E6E9EE;
 // }
 
-.post:hover .pencil {
+.article:hover .pencil {
   visibility: visible;
 }
 
-.post:hover .trash {
+.article:hover .trash {
   visibility: visible;
 }
 
-.post-content {
+.article-content {
   padding-top: 20px;
   font-size: 17px;
 }

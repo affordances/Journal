@@ -1,8 +1,8 @@
-var posts = document.getElementById('posts')
+var articles = document.getElementById('articles')
 
-var post = "<%=j render partial: 'post', locals: { article: @article } %>";
+var article = "<%=j render partial: 'article', locals: { article: @article } %>";
 
-posts.innerHTML = post + posts.innerHTML;
+articles.innerHTML = article + articles.innerHTML;
 document.getElementById("new_article").reset();
 
 setTimeout(function () {

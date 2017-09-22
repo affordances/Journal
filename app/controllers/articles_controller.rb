@@ -17,7 +17,12 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all.order('id DESC').all
+    if params[:tag]
+      @articles = Article.tagged_with(params[:tag])
+    else
+      @articles = Article.all.order('id DESC').all
+    end
+
     @article = Article.new
   end
 
@@ -74,6 +79,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:text)
+    params.require(:article).permit(:text, :all_tags)
   end
 end
