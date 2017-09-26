@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
   validates :text, presence: true, allow_blank: false
 
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   def all_tags=(names)

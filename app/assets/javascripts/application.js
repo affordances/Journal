@@ -19,3 +19,12 @@ function checkForEntry(textarea, button) {
     document.getElementById(button).disabled = false;
   }
 }
+
+// function formatTags() {
+//   var tags = document.getElementById("tags");
+//   tags.addEventListener('keyup', function(e){
+//     if (e == '\n' || e == '\t' || e == ',') {
+//     	tags.value =
+//     }
+//   });
+// }
