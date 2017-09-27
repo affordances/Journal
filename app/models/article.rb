@@ -5,7 +5,10 @@ class Article < ApplicationRecord
   has_many :tags, through: :taggings
 
   def all_tags=(names)
-    self.tags = names.split(',').map do |name|
+    self.tags = names.split('  ').map do |name|
+      if name[0] != '#'
+        name = '#' + name
+      end
       Tag.where(name: name.strip).first_or_create!
     end
   end

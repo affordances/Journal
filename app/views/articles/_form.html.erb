@@ -17,8 +17,9 @@
   <%= f.text_area :text, onkeyup: 'checkForEntry(this, ' +
       (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
 
-  <%= f.text_field :all_tags, placeholder: '#tags', onkeyup: 'checkForEntry(this, ' +
-      (@article.id ? @article.id.to_s : '"new_article_button"') + ')', autocomplete: :off %>
+  <%= f.text_field :all_tags, placeholder: '#tags',
+      id: (@article.id ? 'article_' + @article.id.to_s + '_tags' : 'new_article_tags'), 
+      autocomplete: :off, autocorrect: :off, autocapitalize: :off, spellcheck: false %>
 
   <div class="buttons">
     <%= f.submit 'Save', id: @article.id || 'new_article_button',
