@@ -14,11 +14,12 @@
     </div>
   <% end %> -->
 
-  <%= f.text_area :text, onkeyup: 'checkForEntry(this, ' +
+  <%= f.text_area :text, onkeydown: 'checkForEntry(this, ' +
       (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
 
   <%= f.text_field :all_tags, placeholder: '#tags',
-      id: (@article.id ? 'article_' + @article.id.to_s + '_tags' : 'new_article_tags'), 
+      id: (@article.id ? 'article_' + @article.id.to_s + '_tags' : 'new_article_tags'),
+      onkeydown: 'checkForEntry(this, ' + (@article.id ? @article.id.to_s : '"new_article_button"') + ')', 
       autocomplete: :off, autocorrect: :off, autocapitalize: :off, spellcheck: false %>
 
   <div class="buttons">

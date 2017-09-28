@@ -15,23 +15,25 @@
 //= require_tree .
 
 function checkForEntry(textarea, button) {
-  if (textarea.value.length > 0) {
+  if (textarea.id == 'new_article_tags') {
+    return;
+  } else if (textarea.value.length > 0) {
     document.getElementById(button).disabled = false;
   }
 }
 
 function formatTags(tags) {
-  var tagList = tags.split(/\s+|\,/);
+  var tagList = tags.split(/\s+/);
   var newTags = '';
   for (var i = 0; i < tagList.length; i++) {
-    if (tagList[i] !== "") {
+    if (tagList[i] !== '') {
       newTags += '#' + tagList[i].replace('#', '') + '  ';
     }
   }
   return newTags;
 }
 
-var lastChar = " ";
+var lastChar = ' ';
 
 window.onload = function() {
   var tags = document.getElementById('new_article_tags');
@@ -48,7 +50,7 @@ function allowTagEditing(tags) {
       tags.value = formatTags(tags.value);
       e.preventDefault();
     } else if (code == 8) {
-      if (tags.value.slice(-1) == ' ' && lastChar === " ") {
+      if (tags.value.slice(-1) == ' ' && lastChar === ' ') {
         tags.value = tags.value.substr(0, tags.value.lastIndexOf('#'));
         e.preventDefault();
       }

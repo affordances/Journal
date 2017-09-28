@@ -2,10 +2,8 @@ var form = "<%=j render partial: 'form', locals: { remote: true } %>";
 
 var elt = document.getElementById('<%= @article.id %>');
 
-var tags = document.getElementById('article_<%= @article.id %>_tags');
-
 elt.outerHTML = form;
 
-console.log(tags);
+var tags = document.getElementById('article_<%= @article.id %>_tags');
 
 allowTagEditing(tags);
