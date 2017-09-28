@@ -41,9 +41,16 @@ window.onload = function() {
 }
 
 function allowTagEditing(tags) {
+  tags.addEventListener('mousedown', function(e){
+    tags.focus();
+    e.preventDefault();
+    setTimeout(function(){
+      tags.selectionStart = tags.selectionEnd = tags.value.length;
+    }, 0);
+  });
   tags.addEventListener('keydown', function(e){
     var code = e.keyCode;
-    if (code == 37 || code == 39) {
+    if (code == 37 || code == 38 || code == 39 || code == 40) {
       e.preventDefault();
     }
     if (code == 13 || code == 188 || code == 9 || code == 32) {
