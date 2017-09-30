@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   has_many :tags, through: :taggings
 
   def all_tags=(names)
-    self.tags = names.split('  ').map do |name|
+    self.tags = names.split(' ').map do |name|
       if name[0] != '#'
         name = '#' + name
       end
@@ -15,11 +15,17 @@ class Article < ApplicationRecord
 
   def all_tags
     tags = self.tags.map(&:name)
-    tags.empty? ? tags : tags.map { |tag| tag << '  ' }
+    tags.empty? ? tags : tag_spacer(tags)
     tags
   end
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).articles
+  end
+
+  def tag_spacer(tags)
+    tags.map! { |tag| tag + ' ' }
+    tags[-1] += ' '
+    tags
   end
 end

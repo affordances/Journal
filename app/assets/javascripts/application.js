@@ -27,7 +27,7 @@ function formatTags(tags) {
   var newTags = '';
   for (var i = 0; i < tagList.length; i++) {
     if (tagList[i] !== '') {
-      newTags += '#' + tagList[i].replace('#', '') + '   ';
+      newTags += ('#' + tagList[i].replace('#', '') + '  ');
     }
   }
   return newTags;
@@ -54,10 +54,15 @@ function allowTagEditing(tags) {
       e.preventDefault();
     }
     if (code == 13 || code == 188 || code == 9 || code == 32) {
-      tags.value = formatTags(tags.value);
-      e.preventDefault();
+      lastChar = tags.value.slice(-1);
+      if (lastChar === ' ') {
+        e.preventDefault();
+      } else {
+        tags.value = formatTags(tags.value);
+        e.preventDefault();
+      }
     } else if (code == 8) {
-      if (tags.value.slice(-1) == ' ' && lastChar === ' ') {
+      if (tags.value.slice(-1) == ' ') {
         tags.value = tags.value.substr(0, tags.value.lastIndexOf('#'));
         e.preventDefault();
       }
