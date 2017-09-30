@@ -19,6 +19,11 @@ class ArticlesController < ApplicationController
   def index
     if params[:tag]
       @articles = Article.tagged_with(params[:tag])
+
+      respond_to do |format|
+        format.html {}
+        format.js {}
+      end
     else
       @articles = Article.all.order('id DESC').all
     end

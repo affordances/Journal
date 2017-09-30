@@ -15,7 +15,8 @@ class Article < ApplicationRecord
 
   def all_tags
     tags = self.tags.map(&:name)
-    tags.empty? ? tags : tags << ' '
+    tags.empty? ? tags : tags.map { |tag| tag << '  ' }
+    tags
   end
 
   def self.tagged_with(name)

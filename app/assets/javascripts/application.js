@@ -27,7 +27,7 @@ function formatTags(tags) {
   var newTags = '';
   for (var i = 0; i < tagList.length; i++) {
     if (tagList[i] !== '') {
-      newTags += '#' + tagList[i].replace('#', '') + '  ';
+      newTags += '#' + tagList[i].replace('#', '') + '   ';
     }
   }
   return newTags;
@@ -66,16 +66,14 @@ function allowTagEditing(tags) {
   });
 }
 
-function limitByTag(tag) {
-  articles = document.getElementById('articles').children;
-
-  for (var i = 0; i < articles.length; i++) {
-    var article = articles[i];
-    tags = article.children[2].innerHTML;
-    if (tags.search(tag) == -1) {
-      console.log(article.id);
-      document.getElementById(article.id).style.display = 'none';
-    }
-  }
-  return false;
-}
+// function limitByTag(tag) {
+//   articles = document.getElementById('articles').children;
+//
+//   for (var i = 0; i < articles.length; i++) {
+//     var article = articles[i];
+//     tags = article.children[2].innerHTML;
+//     if (tags.search(tag) == -1) {
+//       document.getElementById(article.id).style.display = 'none';
+//     }
+//   }
+// }
