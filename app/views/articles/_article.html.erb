@@ -27,7 +27,7 @@
   </div>
 
   <div class="tags">
-    <%= raw tag_links(article.all_tags) %>
+    <%= raw tag_links(article.tags.map(&:name)) %>
   </div>
 
 </div>
