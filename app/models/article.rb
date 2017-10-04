@@ -5,12 +5,19 @@ class Article < ApplicationRecord
   has_many :tags, through: :taggings
 
   def all_tags=(names)
-    self.tags = names.split(' ').map do |name|
+    new_tags = names.split(' ').map do |name|
       if name[0] != '#'
         name = '#' + name
       end
       Tag.where(name: name.strip).first_or_create!
     end
+
+    leftover_tags = self.tags - new_tags
+    leftover_tags.each do |tag|
+      Tagging.find_by(article_id: self.id, tag_id: tag.id).destroy
+    end
+
+    self.tags = new_tags
   end
 
   def all_tags

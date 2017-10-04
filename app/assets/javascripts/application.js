@@ -22,6 +22,14 @@ function checkForEntry(textarea, button) {
   }
 }
 
+function buttonPatch(button) {
+  if (button == 'new_article_button') {
+    setTimeout(function () {
+      document.getElementById(button).disabled = true;
+    }, 0);
+  }
+}
+
 function formatTags(tags) {
   var tagList = tags.split(/\s+/);
   var newTags = '';
@@ -33,11 +41,12 @@ function formatTags(tags) {
   return newTags;
 }
 
-var lastChar = ' ';
-
 window.onload = function() {
   var tags = document.getElementById('new_article_tags');
-  allowTagEditing(tags);
+
+  if (tags) {
+    allowTagEditing(tags);
+  }
 }
 
 function allowTagEditing(tags) {
@@ -55,7 +64,7 @@ function allowTagEditing(tags) {
     }
     if (code == 13 || code == 188 || code == 9 || code == 32) {
       lastChar = tags.value.slice(-1);
-      if (lastChar === ' ') {
+      if (tags.value.slice(-1) == ' ') {
         e.preventDefault();
       } else {
         tags.value = formatTags(tags.value);
@@ -66,7 +75,6 @@ function allowTagEditing(tags) {
         tags.value = tags.value.substr(0, tags.value.lastIndexOf('#'));
         e.preventDefault();
       }
-      lastChar = tags.value.slice(-1);
     }
   });
 }
