@@ -1,8 +1,8 @@
 var form = "<%=j render partial: 'form', locals: { remote: true } %>";
 
-var elt = document.getElementById('<%= @article.id %>');
+var el = document.getElementById('<%= @article.id %>');
 
-elt.outerHTML = form;
+el.outerHTML = form;
 
 var tags = document.getElementById('article_<%= @article.id %>_tags');
 

@@ -1,5 +1,14 @@
 var list_element = "<%=j render partial: 'article', locals: { article: @article } %>";
 
-var elt = document.getElementById('edit_article_<%= @article.id %>');
+var el = document.getElementById('edit_article_<%= @article.id %>');
 
-elt.outerHTML = list_element;
+var params = new URLSearchParams(window.location.search);
+var current_tag_filter = params.get('tag');
+
+var article_tags = '<%=j @article.tags.map(&:name).join(',') %>'.split(',');
+
+if (article_tags.indexOf(current_tag_filter) !== -1) {
+  el.outerHTML = list_element;
+} else {
+  el.outerHTML = '';
+}

@@ -19,6 +19,8 @@ function checkForEntry(textarea, button) {
     return;
   } else if (textarea.value.length > 0) {
     document.getElementById(button).disabled = false;
+  } else {
+    document.getElementById(button).disabled = true;
   }
 }
 
@@ -47,6 +49,11 @@ window.onload = function() {
   if (tags) {
     allowTagEditing(tags);
   }
+
+  var tagged_articles_container = document.getElementById('articles');
+  var articles_state = tagged_articles_container.innerHTML;
+
+  window.history.replaceState(articles_state, null, null);
 }
 
 function allowTagEditing(tags) {
@@ -78,6 +85,11 @@ function allowTagEditing(tags) {
     }
   });
 }
+
+window.addEventListener('popstate', function(e) {
+  var tagged_articles_container = document.getElementById('articles');
+  tagged_articles_container.innerHTML = e.state;
+});
 
 // function limitByTag(tag) {
 //   articles = document.getElementById('articles').children;

@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:tag]
-      @articles = Article.tagged_with(params[:tag])
+      @articles = Article.tagged_with(params[:tag]).order('id DESC').all
 
       respond_to do |format|
         format.html {}
