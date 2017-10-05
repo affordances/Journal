@@ -3,3 +3,5 @@ var combined_articles = '<%=j render partial: 'article_list' %>';
 var tagged_articles_container = document.getElementById('articles');
 
 tagged_articles_container.innerHTML = combined_articles;
+
+window.history.pushState(combined_articles, null, '/?tag=<%=j CGI.escape(params[:tag]) %>');
