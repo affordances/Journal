@@ -47,6 +47,11 @@ window.onload = function() {
   if (tags) {
     allowTagEditing(tags);
   }
+
+  var tagged_articles_container = document.getElementById('articles');
+  var articles_state = tagged_articles_container.innerHTML;
+
+  window.history.replaceState(articles_state, null, null);
 }
 
 function allowTagEditing(tags) {
@@ -90,3 +95,8 @@ function allowTagEditing(tags) {
 //     }
 //   }
 // }
+
+window.addEventListener('popstate', function(e) {
+  var tagged_articles_container = document.getElementById('articles');
+  tagged_articles_container.innerHTML = e.state;
+});
