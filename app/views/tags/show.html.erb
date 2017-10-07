@@ -1,0 +1,9 @@
+<div id="articles">
+
+  <% @articles.each do |article| %>
+
+    <%= render partial: 'articles/article', locals: { article: article } %>
+
+  <% end %>
+
+</div>
