@@ -49,11 +49,6 @@ window.onload = function() {
   if (tags) {
     allowTagEditing(tags);
   }
-
-  var tagged_articles_container = document.getElementById('articles');
-  var articles_state = tagged_articles_container.innerHTML;
-
-  window.history.replaceState(articles_state, null, null);
 }
 
 function allowTagEditing(tags) {
@@ -85,20 +80,3 @@ function allowTagEditing(tags) {
     }
   });
 }
-
-window.addEventListener('popstate', function(e) {
-  var tagged_articles_container = document.getElementById('articles');
-  tagged_articles_container.innerHTML = e.state;
-});
-
-// function limitByTag(tag) {
-//   articles = document.getElementById('articles').children;
-//
-//   for (var i = 0; i < articles.length; i++) {
-//     var article = articles[i];
-//     tags = article.children[2].innerHTML;
-//     if (tags.search(tag) == -1) {
-//       document.getElementById(article.id).style.display = 'none';
-//     }
-//   }
-// }

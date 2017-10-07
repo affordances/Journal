@@ -19,11 +19,6 @@ class ArticlesController < ApplicationController
   def index
     if params[:tag]
       @articles = Article.tagged_with(params[:tag]).order('id DESC').all
-
-      respond_to do |format|
-        format.html {}
-        format.js {}
-      end
     else
       @articles = Article.all.order('id DESC').all
     end
@@ -67,6 +62,10 @@ class ArticlesController < ApplicationController
         @article.update(article_params)
       }
     end
+
+    # if current_page?(tag_path)
+    #   redirect_to tag_path
+    # end
   end
 
   def destroy

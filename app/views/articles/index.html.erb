@@ -1,5 +1,11 @@
 <%= render partial: 'form', locals: { remote: false } %>
 
 <div id="articles">
-  <%= render partial: 'article_list' %>
+
+  <% @articles.each do |article| %>
+
+    <%= render partial: 'article', locals: { article: article } %>
+
+  <% end %>
+
 </div>
