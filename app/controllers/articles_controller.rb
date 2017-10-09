@@ -20,6 +20,9 @@ class ArticlesController < ApplicationController
     @articles = Article.all.order('id DESC').all
 
     @article = Article.new
+
+    @archive = Article.all.order("created_at DESC").
+      group_by { |article| article.created_at.strftime("%Y") }
   end
 
   def show

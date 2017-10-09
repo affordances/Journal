@@ -1,0 +1,11 @@
+<% @archive.each do |year, articles| %>
+
+  <%= year %>
+
+  <% months = articles.group_by { |article| article.created_at.strftime("%b") } %>
+
+  <% months.each do |month, articles| %>
+    <%= link_to month, articles_path(articles) %>
+  <% end %>
+
+<% end %>

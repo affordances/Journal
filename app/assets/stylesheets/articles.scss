@@ -10,6 +10,24 @@ body {
   padding: 10px
 }
 
+#container {
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-bo‌​x-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+#articles {
+  width: 50%;
+  float: left;
+}
+
+#archive {
+  margin-left: 50%;
+  width: auto;
+}
+
 form {
   padding-top: 10px;
   padding-left: 20px;
@@ -170,4 +188,8 @@ a:hover {
 .back {
   padding-left: 20px;
   padding-top: 10px;
+}
+
+.clear {
+  clear: both;
 }
