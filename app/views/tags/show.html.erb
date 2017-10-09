@@ -1,9 +1,21 @@
-<div id="articles">
+<div id="container">
 
-  <% @articles.each do |article| %>
+  <div id="articles">
 
-    <%= render partial: 'articles/article', locals: { article: article } %>
+    <% @articles.each do |article| %>
 
-  <% end %>
+      <%= render partial: 'articles/article', locals: { article: article } %>
+
+    <% end %>
+
+  </div>
+
+  <div id="archive">
+
+    <%= render partial: 'articles/archive' %>
+
+  </div>
+
+  <div class="clear"></div>
 
 </div>

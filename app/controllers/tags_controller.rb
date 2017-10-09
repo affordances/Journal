@@ -3,6 +3,9 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find_by_name(params[:tag])
     @articles = @tag.articles
+
+    @archive = Article.all.order("created_at DESC").
+      group_by { |article| article.created_at.strftime("%Y") }
   end
 
   def update
