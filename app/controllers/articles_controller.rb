@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all.order('id DESC').all
+    @articles = Article.all.order('created_at DESC').all
 
     @article = Article.new
 

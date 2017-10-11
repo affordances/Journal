@@ -1,21 +1,21 @@
 <div id="container">
 
-  <div id="articles">
+  <div id="articles-and-form-container">
 
-    <%= render partial: 'form', locals: { remote: false } %>
+    <div id="form">
+      <%= render partial: 'form', locals: { remote: false } %>
+    </div>
 
-    <% @articles.each do |article| %>
-
-      <%= render partial: 'article', locals: { article: article } %>
-
-    <% end %>
+    <div id="articles">
+      <% @articles.each do |article| %>
+        <%= render partial: 'article', locals: { article: article } %>
+      <% end %>
+    </div>
 
   </div>
 
   <div id="archive">
-
     <%= render partial: 'archive' %>
-
   </div>
 
   <div class="clear"></div>
