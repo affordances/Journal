@@ -1,0 +1,21 @@
+<div id="container">
+
+  <div id="articles-and-form-container">
+
+    <% @articles.each do |article| %>
+
+      <%= render partial: 'articles/article', locals: { article: article } %>
+
+    <% end %>
+
+  </div>
+
+  <div id="archive">
+
+    <%= render partial: 'articles/archive' %>
+
+  </div>
+
+  <div class="clear"></div>
+
+</div>
