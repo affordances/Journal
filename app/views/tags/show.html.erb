@@ -2,18 +2,18 @@
 
   <div id="articles-and-form-container">
 
+    <div class="archive-view-header">
+      <%= "Posts tagged with: #{@tag.name}" %>
+    </div>
+
     <% @articles.each do |article| %>
-
       <%= render partial: 'articles/article', locals: { article: article } %>
-
     <% end %>
 
   </div>
 
   <div id="archive">
-
     <%= render partial: 'articles/archive' %>
-
   </div>
 
   <div class="clear"></div>

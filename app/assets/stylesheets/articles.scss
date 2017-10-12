@@ -37,8 +37,26 @@ body {
   padding-left: 100px;
 }
 
-.year {
-  padding: 10px;
+.year-of-posts {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  // word-spacing: 3px;
+}
+
+// .year {
+//   padding-left: 5px;
+// }
+
+.archive-header {
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: underline;
+}
+
+.archive-view-header {
+  font-size: 30px;
+  padding: 20px 20px;
 }
 
 .clear {
