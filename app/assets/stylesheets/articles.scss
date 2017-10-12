@@ -37,15 +37,21 @@ body {
   padding-left: 100px;
 }
 
-.year-of-posts {
+.year-block {
   padding-top: 10px;
   padding-bottom: 10px;
-  // word-spacing: 3px;
 }
 
-// .year {
-//   padding-left: 5px;
-// }
+.year {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.month-links {
+  display: inline-block;
+  word-spacing: 2px;
+}
 
 .archive-header {
   font-size: 25px;

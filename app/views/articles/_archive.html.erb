@@ -4,15 +4,20 @@
 
 <% @archive.each do |year, articles| %>
 
-  <div class="year-of-posts">
+  <div class="year-block">
 
-    <%= year %>
+    <div class="year">
+      <%= year %>
+    </div>
+
 
     <% months = articles.group_by { |article| article.created_at.strftime("%b") } %>
 
-    <% months.each do |month, articles| %>
-      <%= link_to month, month_path(articles[0].created_at.strftime('%Y-%m')) %>
-    <% end %>
+    <div class="month-links">
+      <% months.each do |month, articles| %>
+        <%= link_to month, month_path(articles[0].created_at.strftime('%Y-%m')) %>
+      <% end %>
+    </div>
 
   </div>
 
