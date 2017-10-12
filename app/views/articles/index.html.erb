@@ -2,6 +2,10 @@
 
   <div id="articles-and-form-container">
 
+    <div id="header">
+        <%= link_to 'JOURNAL', articles_path %>
+    </div>
+
     <div id="form">
       <%= render partial: 'form', locals: { remote: false } %>
     </div>

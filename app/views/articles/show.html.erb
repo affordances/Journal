@@ -2,6 +2,10 @@
 
   <div id="articles-and-form-container">
 
+    <div id="header">
+        <%= link_to 'JOURNAL', articles_path %>
+    </div>
+
     <div id="articles">
       <%= render partial: 'article', locals: { article: @article } %>
     </div>
@@ -15,7 +19,3 @@
   <div class="clear"></div>
 
 </div>
-
-<!-- <div class="back">
-  <%= link_to 'Home', articles_path %>
-</div> -->

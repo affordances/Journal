@@ -26,6 +26,14 @@ body {
 
 }
 
+#header {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: 10px;
+}
+
 #articles-and-form-container {
   width: 50%;
   float: left;
@@ -35,6 +43,18 @@ body {
   margin-left: 50%;
   width: auto;
   padding-left: 100px;
+}
+
+.archive-header {
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  // text-decoration: underline;
+}
+
+.archive-view-header {
+  font-size: 30px;
+  padding: 20px 20px;
 }
 
 .year-block {
@@ -51,18 +71,6 @@ body {
 .month-links {
   display: inline-block;
   word-spacing: 2px;
-}
-
-.archive-header {
-  font-size: 25px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-decoration: underline;
-}
-
-.archive-view-header {
-  font-size: 30px;
-  padding: 20px 20px;
 }
 
 .clear {
