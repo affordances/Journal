@@ -27,6 +27,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+
+    @archive = Article.all.order("created_at DESC").
+      group_by { |article| article.created_at.strftime("%Y") }
   end
 
   def edit

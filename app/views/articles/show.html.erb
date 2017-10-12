@@ -1,5 +1,21 @@
-<%= render partial: 'article', locals: { article: @article } %>
+<div id="container">
 
-<div class="back">
-  <%= link_to 'Back', articles_path %>
+  <div id="articles-and-form-container">
+
+    <div id="articles">
+      <%= render partial: 'article', locals: { article: @article } %>
+
+      <div class="back">
+        <%= link_to 'Back', articles_path %>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="archive">
+    <%= render partial: 'archive' %>
+  </div>
+
+  <div class="clear"></div>
+
 </div>
