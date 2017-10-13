@@ -6,55 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-a1 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a2 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a3 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a4 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a5 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a6 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a7 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a8 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a9 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
-a10 = Article.create(text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.')
+text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.'
 
-a1.update_attribute :created_at, (rand*1000).days.ago
-a2.update_attribute :created_at, (rand*1000).days.ago
-a3.update_attribute :created_at, (rand*1000).days.ago
-a4.update_attribute :created_at, (rand*1000).days.ago
-a5.update_attribute :created_at, (rand*1000).days.ago
-a6.update_attribute :created_at, (rand*1000).days.ago
-a7.update_attribute :created_at, (rand*1000).days.ago
-a8.update_attribute :created_at, (rand*1000).days.ago
-a9.update_attribute :created_at, (rand*1000).days.ago
-a10.update_attribute :created_at, (rand*1000).days.ago
+tags = ['#good', '#bad', '#up', '#down', '#right', '#left',
+        '#fast', '#slow', '#inside', '#outside']
 
-Tag.create(name: '#good')
-Tag.create(name: '#bad')
-Tag.create(name: '#up')
-Tag.create(name: '#down')
-Tag.create(name: '#right')
-Tag.create(name: '#left')
-Tag.create(name: '#fast')
-Tag.create(name: '#slow')
-Tag.create(name: '#inside')
-Tag.create(name: '#outside')
+tags.each do |tag|
+  Tag.create(name: tag)
+end
 
-Tagging.create(article_id: 1, tag_id: 1)
-Tagging.create(article_id: 1, tag_id: 3)
-Tagging.create(article_id: 1, tag_id: 6)
-Tagging.create(article_id: 2, tag_id: 2)
-Tagging.create(article_id: 2, tag_id: 5)
-Tagging.create(article_id: 3, tag_id: 4)
-Tagging.create(article_id: 3, tag_id: 6)
-Tagging.create(article_id: 3, tag_id: 1)
-Tagging.create(article_id: 4, tag_id: 7)
-Tagging.create(article_id: 4, tag_id: 8)
-Tagging.create(article_id: 4, tag_id: 9)
-Tagging.create(article_id: 5, tag_id: 9)
-Tagging.create(article_id: 5, tag_id: 7)
-Tagging.create(article_id: 1, tag_id: 1)
-Tagging.create(article_id: 1, tag_id: 6)
-Tagging.create(article_id: 2, tag_id: 7)
-Tagging.create(article_id: 2, tag_id: 9)
-Tagging.create(article_id: 2, tag_id: 8)
-Tagging.create(article_id: 8, tag_id: 10)
+articles_count = 100
+
+articles_count.times do
+  article = Article.create(text: text)
+  article.update_attribute :created_at, (rand * 2000).days.ago
+end
+
+articles_count.times do
+  article = rand(articles_count)
+  tag = rand(10)
+
+  if !Tagging.find_by(article_id: article, tag_id: tag)
+    Tagging.create(article_id: article, tag_id: tag)
+  end
+end

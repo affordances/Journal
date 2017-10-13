@@ -10,11 +10,10 @@
       <%= year %>
     </div>
 
-
     <% months = articles.group_by { |article| article.created_at.strftime("%b") } %>
 
     <div class="month-links">
-      <% months.each do |month, articles| %>
+      <% months.to_a.reverse.to_h.each do |month, articles| %>
         <%= link_to month, month_path(articles[0].created_at.strftime('%Y-%m')) %>
       <% end %>
     </div>
