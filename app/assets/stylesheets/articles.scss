@@ -49,7 +49,6 @@ body {
   font-size: 25px;
   padding-top: 20px;
   padding-bottom: 15px;
-  // text-decoration: underline;
 }
 
 .archive-view-header {
@@ -77,6 +76,25 @@ body {
   word-spacing: 2px;
   padding-left: 64px;
   margin-right: 225px
+}
+
+#tag-box {
+  margin-left: 50%;
+  width: auto;
+  padding-left: 100px;
+  padding-top: 20px;
+  margin-right: 225px
+}
+
+#tag-collection {
+  word-spacing: 10px;
+  line-height: 150%;
+}
+
+.tags-header {
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 25px;
 }
 
 .clear {

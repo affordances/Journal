@@ -1,0 +1,11 @@
+<div class="tags-header">
+  Tags
+</div>
+
+<div id="tag-collection">
+
+  <% @tag_collection.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag.name) %>
+  <% end %>
+
+</div>

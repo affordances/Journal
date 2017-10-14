@@ -1,7 +1,7 @@
 <div id="container">
 
   <div id="articles-and-form-container" data-tag="<%= @tag.name %>">
-    
+
     <div id="header">
         <%= link_to 'JOURNAL', articles_path %>
     </div>
@@ -18,6 +18,10 @@
 
   <div id="archive">
     <%= render partial: 'articles/archive' %>
+  </div>
+
+  <div id="tag-box">
+    <%= render partial: 'articles/tags' %>
   </div>
 
   <div class="clear"></div>
