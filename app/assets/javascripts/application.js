@@ -80,3 +80,24 @@ function allowTagEditing(tags) {
     }
   });
 }
+
+function tagMissing(article_el, tag) {
+  var article_els = article_elt.querySelectorAll('.tags a');
+  var found_tag = true;
+  for (var i = 0; i < a_elts.length; i++) {
+    if (article_els[i].innerText === tag) {
+      found_tag = false;
+    }
+  }
+  return found_tag;
+}
+
+function noArticlesLeft() {
+  var articles = document.querySelectorAll('.article')
+
+  if (articles.length === 0) {
+    return true;
+  }
+
+  return false;
+}

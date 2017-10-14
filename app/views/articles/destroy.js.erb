@@ -1,3 +1,9 @@
 var el = document.getElementById('<%= @article.id %>');
 
 el.parentNode.removeChild(el);
+
+setTimeout(function() {
+  if (noArticlesLeft()) {
+    window.location.href = '/';
+  }
+});

@@ -3,3 +3,17 @@ var list_element = "<%=j render partial: 'article', locals: { article: @article 
 var el = document.getElementById('edit_article_<%= @article.id %>');
 
 el.outerHTML = list_element;
+
+setTimeout(function () {
+  var el = document.getElementById('<%= @article.id %>');
+  var tag = document.getElementById("articles-and-form-container").getAttribute('data-tag');
+
+
+  if (tag && tagMissing(el, tag)) {
+    el.parentNode.removeChild(el);
+  }
+
+  if (noArticlesLeft()) {
+    window.location.href = '/';
+  }
+}, 0);
