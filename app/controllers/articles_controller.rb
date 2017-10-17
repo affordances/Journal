@@ -32,6 +32,8 @@ class ArticlesController < ApplicationController
 
     @archive = Article.all.order("created_at DESC").
       group_by { |article| article.created_at.strftime("%Y") }
+
+    @tag_collection = Tagging.all.map(&:tag).uniq
   end
 
   def edit
