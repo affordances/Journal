@@ -2,6 +2,20 @@
   Archive
 </div>
 
+<div id="login">
+  <% if logged_in? %>
+    <%= currrent_user.email %>
+
+    <% if current_user.email == 'gabrielduquette@gmail.com' %>
+      I'm good
+    <% end %>
+
+    <%= link_to "Sign out", sign_out_path %>
+  <% else %>
+    <%= link_to "Sign in", sign_in_path %>
+  <% end %>
+</div>
+
 <% @archive.each do |year, articles| %>
 
   <div class="year-block">

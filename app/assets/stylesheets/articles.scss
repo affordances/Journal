@@ -41,9 +41,14 @@ body {
 }
 
 .archive-header {
+  display: inline-block;
   font-size: 25px;
   padding-top: 20px;
   padding-bottom: 15px;
+}
+
+#login {
+  display: inline-block;
 }
 
 .archive-view-header {
