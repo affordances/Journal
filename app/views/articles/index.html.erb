@@ -1,6 +1,18 @@
 <div id="container">
 
   <div id="articles-and-form-container">
+    <% if logged_in? %>
+      <%= current_user.email %>
+
+      <% if current_user.email == 'gabe@email.com' %>
+        You are the special boy
+      <% end %>
+
+      <%= link_to "Sign out", sign_out_path %>
+    <% else %>
+      <%= link_to "Sign in", sign_in_path %>
+    <% end %>
+
 
     <div id="header">
         <%= link_to 'JOURNAL', articles_path %>
