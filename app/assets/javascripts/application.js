@@ -15,14 +15,13 @@
 //= require_tree .
 
 function login() {
-  var closePopup = document.getElementById("popupclose");
   var overlay = document.getElementById("overlay");
   var popup = document.getElementById("popup");
 
   overlay.style.display = 'block';
   popup.style.display = 'block';
 
-  closePopup.onclick = function() {
+  overlay.onclick = function() {
     overlay.style.display = 'none';
     popup.style.display = 'none';
   };
