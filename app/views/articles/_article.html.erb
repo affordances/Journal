@@ -8,16 +8,20 @@
     </div>
 
     <div class="pencil">
+      <% if logged_in? %>
       <%= link_to ('<i class="fa fa-pencil"></i>').html_safe,
           edit_article_path(article), remote: true %>
+      <% end %>
     </div>
 
     <div class="trash">
-      <%= link_to ('<i class="fa fa-trash-o"></i>').html_safe,
-          article_path(article),
-              remote: true,
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
+      <% if logged_in? %>
+        <%= link_to ('<i class="fa fa-trash-o"></i>').html_safe,
+            article_path(article),
+                remote: true,
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+      <% end %>
     </div>
 
   </div>

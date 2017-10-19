@@ -4,11 +4,7 @@
 
 <div id="login">
   <% if logged_in? %>
-    <%= currrent_user.email %>
-
-    <% if current_user.email == 'gabrielduquette@gmail.com' %>
-      I'm good
-    <% end %>
+    <!-- <%= current_user.email %> -->
 
     <%= link_to "Sign out", sign_out_path %>
   <% else %>

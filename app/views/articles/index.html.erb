@@ -7,8 +7,11 @@
     </div>
 
     <div id="form">
-      <%= render partial: 'form', locals: { remote: false } %>
+      <% if logged_in? %>
+        <%= render partial: 'form', locals: { remote: false } %>
+      <% end %>
     </div>
+
 
     <div id="articles">
       <% @articles.each do |article| %>
