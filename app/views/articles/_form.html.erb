@@ -1,4 +1,4 @@
-<%= form_for @article, remote: true do |f| %>
+<%= form_for @article, remote: true do |form| %>
 
   <!-- <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -14,18 +14,18 @@
     </div>
   <% end %> -->
 
-  <%= f.text_area :text, onkeyup: 'checkForEntry(this, ' +
+  <%= form.text_area :text, onkeyup: 'checkForEntry(this, ' +
       (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
 
-  <%= f.text_field :all_tags, placeholder: '#tags',
+  <%= form.text_field :all_tags, placeholder: '#tags',
       id: (@article.id ? 'article_' + @article.id.to_s + '_tags' : 'new_article_tags'),
       onkeydown: 'checkForEntry(this, ' + (@article.id ? @article.id.to_s : '"new_article_button"') + ')',
       autocomplete: :off, autocorrect: :off, autocapitalize: :off, spellcheck: false %>
 
   <div class="buttons">
-    <%= f.submit 'Save', id: @article.id || 'new_article_button',
+    <%= form.submit 'Save', id: @article.id || 'new_article_button',
         class: 'save-button', disabled: true, remote: true %>
-    <%= f.submit 'Cancel', class: 'cancel-button',
+    <%= form.submit 'Cancel', class: 'cancel-button',
         type: @article.id ? 'submit' : 'reset',
         onclick: 'buttonPatch(' + (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
   </div>

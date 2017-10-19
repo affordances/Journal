@@ -21,14 +21,32 @@
 
   </div>
 
-  <div id="archive">
-    <%= render partial: 'archive' %>
-  </div>
+  <div id="archive-and-tags-container">
 
-  <div id="tag-box">
-    <%= render partial: 'tags' %>
+    <div id="archive">
+      <%= render partial: 'articles/archive' %>
+    </div>
+
+    <div id="tag-box">
+      <%= render partial: 'articles/tags' %>
+    </div>
+
   </div>
 
   <div class="clear"></div>
+
+  <div id="overlay"></div>
+
+  <div id="popup">
+
+    <div class="popupcontrols">
+      <span id="popupclose">X</span>
+    </div>
+
+    <div class="popupcontent">
+      <%= render partial: 'articles/login' %>
+    </div>
+
+  </div>
 
 </div>

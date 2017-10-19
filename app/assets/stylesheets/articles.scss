@@ -34,10 +34,57 @@ body {
   float: left;
 }
 
-#archive {
-  margin-left: 50%;
-  width: auto;
-  padding-left: 100px;
+#archive-and-tags-container {
+  width: 325px;
+  float: right;
+  margin-right: 100px;
+}
+
+#tag-box {
+  padding-top: 20px;
+}
+
+#tag-collection {
+  word-spacing: 10px;
+  line-height: 150%;
+}
+
+#login {
+  display: inline-block;
+  float: right;
+  padding-top: 28px;
+  padding-right: 15px;
+}
+
+#overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+#popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px; /*Half the value of width to center div*/
+  margin-top: -250px; /*Half the value of height to center div*/
+  z-index: 200;
+}
+
+#popupclose {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .archive-header {
@@ -45,10 +92,6 @@ body {
   font-size: 25px;
   padding-top: 20px;
   padding-bottom: 15px;
-}
-
-#login {
-  display: inline-block;
 }
 
 .archive-view-header {
@@ -75,20 +118,6 @@ body {
   display: inline-block;
   word-spacing: 2px;
   padding-left: 64px;
-  margin-right: 225px
-}
-
-#tag-box {
-  margin-left: 50%;
-  width: auto;
-  padding-left: 100px;
-  padding-top: 20px;
-  margin-right: 225px
-}
-
-#tag-collection {
-  word-spacing: 10px;
-  line-height: 150%;
 }
 
 .tags-header {
