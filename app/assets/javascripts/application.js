@@ -15,15 +15,17 @@
 //= require_tree .
 
 function login(form) {
-  var overlay = document.getElementById("overlay");
+  var overlay = document.getElementById('overlay');
   var form = document.getElementById(form);
 
   overlay.style.display = 'block';
   form.style.display = 'block';
+  document.getElementsByTagName('body')[0].className += ' scrolling';
 
   overlay.onclick = function() {
     overlay.style.display = 'none';
     form.style.display = 'none';
+    document.getElementsByTagName('body')[0].className = '';
   };
 }
 

@@ -1,24 +1,32 @@
 <%= form_for :session, url: session_path do |form| %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
+  <div id='login-container'>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <div class='login-header'>
+      Sign in
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div>
+      <%= form.text_field :email, type: 'email', class: 'sign-in-field' %>
+    </div>
 
-  <div class="links">
-    <% if Authenticate.configuration.allow_sign_up? %>
-        <%= link_to t(".sign_up"), sign_up_path, onclick: 'login("sign-up")', remote: true %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path, onclick: 'login("new-password")', remote: true %>
+    <div>
+      <%= form.password_field :password, class: 'sign-in-field' %>
+    </div>
+
+    <div>
+      <%= form.submit 'Welcome', class: 'sign-in-button' %>
+    </div>
+
+
+
+    <div class="login-links">
+      <% if Authenticate.configuration.allow_sign_up? %>
+          <%= link_to 'Sign up', sign_up_path, class: 'sign-in-button', onclick: 'login("sign-up")', remote: true %>
+      <% end %>
+      <%= link_to 'Forgot your password?', new_password_path, onclick: 'login("new-password")', remote: true %>
+    </div>
+
   </div>
 
 <% end %>
