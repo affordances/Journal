@@ -14,16 +14,16 @@
 //= require jquery_ujs
 //= require_tree .
 
-function login() {
+function login(form) {
   var overlay = document.getElementById("overlay");
-  var popup = document.getElementById("popup");
+  var form = document.getElementById(form);
 
   overlay.style.display = 'block';
-  popup.style.display = 'block';
+  form.style.display = 'block';
 
   overlay.onclick = function() {
     overlay.style.display = 'none';
-    popup.style.display = 'none';
+    form.style.display = 'none';
   };
 }
 

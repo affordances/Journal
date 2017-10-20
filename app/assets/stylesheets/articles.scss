@@ -49,7 +49,7 @@ body {
   line-height: 150%;
 }
 
-#login {
+#sign-in-link {
   display: inline-block;
   float: right;
   padding-top: 28px;
@@ -68,7 +68,7 @@ body {
   z-index: 100;
 }
 
-#popup {
+#login-form {
   display: none;
   position: absolute;
   top: 50%;
@@ -81,10 +81,30 @@ body {
   z-index: 200;
 }
 
-#popupclose {
-  float: right;
-  padding: 10px;
-  cursor: pointer;
+#sign-up {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px; /*Half the value of width to center div*/
+  margin-top: -250px; /*Half the value of height to center div*/
+  z-index: 200;
+}
+
+#new-password {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px; /*Half the value of width to center div*/
+  margin-top: -250px; /*Half the value of height to center div*/
+  z-index: 200;
 }
 
 .archive-header {

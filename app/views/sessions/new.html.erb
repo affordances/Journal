@@ -19,9 +19,9 @@
 
       <div class="links">
         <% if Authenticate.configuration.allow_sign_up? %>
-            <%= link_to t(".sign_up"), sign_up_path %>
+            <%= link_to t(".sign_up") %>
         <% end %>
-        <%= link_to t(".forgot_password"), new_password_path %>
+        <%= link_to t(".forgot_password") %>
       </div>
   <% end %>
 
