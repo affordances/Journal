@@ -1,0 +1,10 @@
+var filtered_articles = [];
+
+<% @articles.each do |article| %>
+    filtered_articles.push('<%=j render partial: 'article', locals: {article: article} %>');
+<% end %>
+
+var combined_articles = filtered_articles.join('');
+
+var tagged_articles_container = document.getElementById('articles');
+tagged_articles_container.innerHTML = combined_articles;
