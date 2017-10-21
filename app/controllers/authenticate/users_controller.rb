@@ -45,4 +45,8 @@ class Authenticate::UsersController < Authenticate::AuthenticateController
   def user_params
     params[Authenticate.configuration.user_model_param_key] || {}
   end
+
+  def redirect_back_or(fallback)
+    redirect_back(fallback_location: default)
+  end
 end
