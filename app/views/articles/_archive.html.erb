@@ -6,7 +6,7 @@
   <% if logged_in? %>
     <%= link_to "Sign out", sign_out_path %>
   <% else %>
-    <%= link_to "Sign in", session_path, onclick: 'login("login-form")', remote: true %>
+    <%= link_to "Sign in", new_session_path, onclick: 'login("login-form")', remote: true %>
   <% end %>
 </div>
 

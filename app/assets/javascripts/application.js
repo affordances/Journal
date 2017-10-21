@@ -14,7 +14,11 @@
 //= require jquery_ujs
 //= require_tree .
 
-function login(form) {
+function login(form, oldForm) {
+  if (oldForm) {
+    document.getElementById(oldForm).style.display = 'none';
+  }
+
   var overlay = document.getElementById('overlay');
   var form = document.getElementById(form);
 

@@ -22,11 +22,9 @@
 
   <div>
     <% if Authenticate.configuration.allow_sign_up? %>
-      <%= link_to 'Sign up', sign_up_path, class: 'sign-in-button' %>
+      <%= link_to 'Sign up', sign_up_path, class: 'sign-in-button',
+          onclick: 'login("signup-form", "login-form")', remote: true %>
     <% end %>
   </div>
-
-
-
 
 <% end %>
