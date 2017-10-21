@@ -55,7 +55,7 @@ class Authenticate::SessionsController < Authenticate::AuthenticateController
   end
 
   def redirect_back_or(fallback)
-    redirect_back(fallback_location: default)
+    redirect_back(fallback_location: fallback)
   end
 
 end
