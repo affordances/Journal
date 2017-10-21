@@ -53,4 +53,9 @@ class Authenticate::SessionsController < Authenticate::AuthenticateController
   def url_for_signed_in_users
     url_after_create
   end
+
+  def redirect_back_or(fallback)
+    redirect_back(fallback_location: fallback)
+  end
+
 end
