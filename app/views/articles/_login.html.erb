@@ -1,32 +1,32 @@
 <%= form_for :session, url: session_path do |form| %>
 
-  <div id='login-container'>
-
-    <div class='login-header'>
-      Sign in
-    </div>
-
-    <div>
-      <%= form.text_field :email, type: 'email', class: 'sign-in-field' %>
-    </div>
-
-    <div>
-      <%= form.password_field :password, class: 'sign-in-field' %>
-    </div>
-
-    <div>
-      <%= form.submit 'Welcome', class: 'sign-in-button' %>
-    </div>
-
-
-
-    <div class="login-links">
-      <% if Authenticate.configuration.allow_sign_up? %>
-          <%= link_to 'Sign up', sign_up_path, class: 'sign-in-button', onclick: 'login("sign-up")', remote: true %>
-      <% end %>
-      <%= link_to 'Forgot your password?', new_password_path, onclick: 'login("new-password")', remote: true %>
-    </div>
-
+  <div class='login-header'>
+    Sign in
   </div>
+
+  <div>
+    <%= form.text_field :email, type: 'email', class: 'sign-in-field' %>
+  </div>
+
+  <div>
+    <%= form.password_field :password, class: 'sign-in-field' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Welcome', class: 'sign-in-button' %>
+  </div>
+
+  <div class='password-link'>
+    <%= link_to 'Forgot your password?', new_password_path %>
+  </div>
+
+  <div class='sign-in-button'>
+    <% if Authenticate.configuration.allow_sign_up? %>
+      <%= link_to 'Sign up', sign_up_path %>
+    <% end %>
+  </div>
+
+
+
 
 <% end %>

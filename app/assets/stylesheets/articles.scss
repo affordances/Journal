@@ -81,16 +81,23 @@ body {
   margin-left: -150px;
   margin-top: -200px;
   z-index: 200;
+  padding: 0 !important;
+}
+
+#login-form form {
+  padding: 35px;
 }
 
 .login-header {
   text-align: center;
+  font-size: 25px;
+  padding-bottom: 30px;
 }
 
 .sign-in-field {
   height: 40px;
-  width: 213px;
-  padding-left: 10px;
+  width: 100%;
+  padding: 0 10px;
   border: 1px solid #C2C6CF;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -106,9 +113,10 @@ body {
 
 .sign-in-button {
   height: 45px;
-  width: 213px;
+  width: 100%;
   background-color: #54C271;
-  margin-top: 10px;
+  padding: 10px 32px;
+  margin-top: 20px;
   color: white;
   outline: none;
   border-radius: 3px;
@@ -122,13 +130,24 @@ body {
   display: block;
 }
 
+#login-form .sign-in-button a {
+  background-color: #54C271;
+  color: white;
+}
+
+#login-form .sign-in-button:hover a {
+  background-color: #6DD87B;
+}
+
 .sign-in-button:hover {
   background-color: #6DD87B;
 }
 
-.login-links {
+.password-link {
+  font-weight: 100;
+  text-align: center;
   margin-top: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .archive-header {
