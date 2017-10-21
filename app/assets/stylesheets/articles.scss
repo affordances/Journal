@@ -11,7 +11,7 @@ body {
 }
 
 .scrolling {
-  position: fixed!important
+  position: fixed !important;
 }
 
 #container {
@@ -130,23 +130,29 @@ body {
   display: block;
 }
 
+.sign-in-button:hover {
+  background-color: #6DD87B;
+}
+
 #login-form .sign-in-button a {
   background-color: #54C271;
-  color: white;
+  color: white !important;
+}
+
+#login-form .sign-in-button a:visited {
+  background-color: #54C271;
+  color: white !important;
 }
 
 #login-form .sign-in-button:hover a {
   background-color: #6DD87B;
 }
 
-.sign-in-button:hover {
-  background-color: #6DD87B;
-}
-
 .password-link {
   font-weight: 100;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 40px;
   font-size: 12px;
 }
 
@@ -347,7 +353,7 @@ a, a:visited {
 }
 
 a:hover {
-    color: #5D6E69;
+  color: #5D6E69;
 }
 
 .back {
