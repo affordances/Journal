@@ -84,6 +84,10 @@ body {
   padding: 0 !important;
 }
 
+#login-form form {
+  padding: 35px;
+}
+
 #signup-form {
   display: none;
   position: fixed;
@@ -99,8 +103,23 @@ body {
   padding: 0 !important;
 }
 
-#login-form form {
+#signup-form form {
   padding: 35px;
+}
+
+#password-form {
+  display: none;
+  position: fixed;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  background: white;
+  width: 300px;
+  height: 400px;
+  margin-left: -150px;
+  margin-top: -200px;
+  z-index: 200;
+  padding: 0 !important;
 }
 
 .login-header {

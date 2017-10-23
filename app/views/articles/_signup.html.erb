@@ -1,16 +1,19 @@
 <%= form_for :password, url: passwords_path do |form| %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+<div class='login-header'>
+  Email
+</div>
+
+  <div>
+    <%= form.text_field :email, type: 'email', class: 'sign-in-field' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.submit 'Reset password', class: 'sign-in-button' %>
   </div>
 
-  <div class="links">
-    <%= link_to t(".sign_in"), new_session_path,
+  <div>
+    <%= link_to 'Sign in', new_session_path, class: 'sign-in-button',
         onclick: 'login("login-form", "signup-form")', remote: true %>
   </div>
 
