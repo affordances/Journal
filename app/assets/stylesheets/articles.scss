@@ -88,6 +88,19 @@ body {
   padding: 35px;
 }
 
+#login-form input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+#login-form a {
+  font-weight: 400;
+}
+
+#login-form .sign-in-button {
+  padding: 12px 32px;
+}
+
 #signup-form {
   display: none;
   position: fixed;
@@ -107,6 +120,19 @@ body {
   padding: 35px;
 }
 
+#signup-form input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+#signup-form a {
+  font-weight: 400;
+}
+
+#signup-form .sign-in-button {
+  padding: 12px 32px;
+}
+
 #password-form {
   display: none;
   position: fixed;
@@ -120,6 +146,23 @@ body {
   margin-top: -200px;
   z-index: 200;
   padding: 0 !important;
+}
+
+#password-form form {
+  padding: 35px;
+}
+
+#password-form input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+#password-form a {
+  font-weight: 400;
+}
+
+#password-form .sign-in-button {
+  padding: 12px 32px;
 }
 
 .login-header {
@@ -151,12 +194,12 @@ body {
   background-color: #54C271;
   padding: 10px 32px;
   margin-top: 20px;
-  color: white;
+  color: white !important;
   outline: none;
   border-radius: 3px;
   border: none;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block;
   font-size: 16px;
   font-weight: 100;
@@ -165,20 +208,6 @@ body {
 }
 
 .sign-in-button:hover {
-  background-color: #6DD87B;
-}
-
-#login-form .sign-in-button a {
-  background-color: #54C271;
-  color: white !important;
-}
-
-#login-form .sign-in-button a:visited {
-  background-color: #54C271;
-  color: white !important;
-}
-
-#login-form .sign-in-button:hover a {
   background-color: #6DD87B;
 }
 
@@ -236,6 +265,7 @@ body {
 form {
   padding-top: 10px;
   padding-left: 20px;
+
 }
 
 textarea {

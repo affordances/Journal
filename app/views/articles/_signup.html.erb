@@ -1,15 +1,15 @@
 <%= form_for :password, url: passwords_path do |form| %>
 
-<div class='login-header'>
-  Email
-</div>
+  <div class='login-header'>
+    Sign up
+  </div>
 
   <div>
     <%= form.text_field :email, type: 'email', class: 'sign-in-field' %>
   </div>
 
   <div>
-    <%= form.submit 'Reset password', class: 'sign-in-button' %>
+    <%= form.submit 'Submit', class: 'sign-in-button' %>
   </div>
 
   <div>
