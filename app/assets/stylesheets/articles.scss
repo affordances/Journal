@@ -280,11 +280,12 @@ textarea {
   font-weight: 100;
   -webkit-box-sizing: border-box;
   display: block;
+  line-height: 150%;
 }
 
 textarea:focus {
   border: 1px solid #B2C6EF;
-  border-color: #B2C6EF #B2C6EF white #B2C6EF;
+  border-color: #C2C6CF #C2C6CF white #C2C6CF;
   font-weight: 100;
   outline: none;
 }
@@ -310,7 +311,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
   border: 1px solid #B2C6EF;
-  border-color: white #B2C6EF #B2C6EF #B2C6EF;
+  border-color: white #C2C6CF #C2C6CF #C2C6CF;
   outline: none;
 }
 
@@ -393,6 +394,7 @@ input[type="text"]:focus {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-right: 20px;
+  line-height: 150%;
 }
 
 .article:hover .pencil {

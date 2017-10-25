@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
+
 function login(form, oldForm) {
   if (oldForm) {
     document.getElementById(oldForm).style.display = 'none';

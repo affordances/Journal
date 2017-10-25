@@ -1,0 +1,11 @@
+<div class="confirm-delete" id="<%= article.id %>">
+
+  Sure?
+
+  <%= link_to 'Y', article_path(article), remote: true, method: :delete %>
+
+  /
+
+  <%= link_to 'N', remote: true %>
+
+</div>

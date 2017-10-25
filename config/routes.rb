@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'tags#show', as: 'tag'
   get 'months/:month', to: 'months#show', as: 'month'
 
+  # get 'articles/:article', to: 'articles#delete_content', as: 'article'
+
   resources :articles, :tags, :months
 
   root 'articles#index'

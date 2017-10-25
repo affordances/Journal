@@ -13,6 +13,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # def delete_content
+  #   respond_to do |format|
+  #     format.js
+  #   end
+  # end
+
   def index
     @articles = Article.all.order('created_at DESC')
 
