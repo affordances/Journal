@@ -1,6 +1,6 @@
-<div class="article"  id="<%= article.id %>">
+<div class="article" id="<%= article.id %>">
 
-  <div class "article-links-<%= article.id %>">
+  <div class="article-links">
 
     <div class="timestamp">
       <%= link_to article.created_at.strftime("%B %e, %Y"),
@@ -9,16 +9,24 @@
 
     <div class="pencil">
       <% if logged_in? %>
-      <%= link_to ('<i class="fa fa-pencil"></i>').html_safe,
-          edit_article_path(article), remote: true %>
-      <% end %>
+        <%= link_to ('<i class="fa fa-pencil"></i>').html_safe,
+            edit_article_path(article), remote: true %>
+        <% end %>
     </div>
 
     <div class="trash">
       <% if logged_in? %>
         <%= link_to ('<i class="fa fa-trash-o"></i>').html_safe,
+            onclick: 'showConfirm(article)',
             remote: true %>
       <% end %>
+    </div>
+
+    <div class="confirm-delete">
+      Sure?
+      <%= link_to 'Y', remote: true %>
+      /
+      <%= link_to 'N', onclick: 'this.style.display = "none"', remote: true %>
     </div>
 
   </div>

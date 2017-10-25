@@ -229,7 +229,8 @@ body {
 
 .archive-view-header {
   font-size: 30px;
-  padding: 20px 20px;
+  padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 .year-block {
@@ -386,7 +387,12 @@ input[type="text"]:focus {
 
 .trash {
   display: inline-block;
+  padding-right: 10px;
   visibility: hidden;
+}
+
+.confirm-delete {
+  display: none;
 }
 
 .article {

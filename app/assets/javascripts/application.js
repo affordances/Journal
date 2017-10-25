@@ -14,6 +14,14 @@
 //= require jquery_ujs
 //= require_tree .
 
+function showConfirm(article) {
+  var el = document.getElementById(article);
+  var confirm = el.getElementsByTagName('confirm-delete');
+
+  console.log(confirm);
+
+  confirm.style.display[0] = 'inline-block';
+}
 
 function login(form, oldForm) {
   if (oldForm) {
