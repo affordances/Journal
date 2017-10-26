@@ -16,11 +16,13 @@
 
 function showConfirm(article) {
   var el = document.getElementById(article);
-  var confirm = el.getElementsByTagName('confirm-delete');
+  var confirm = el.getElementsByClassName('confirm-delete');
 
-  console.log(confirm);
-
-  confirm.style.display[0] = 'inline-block';
+  if (confirm[0].style.display === 'inline-block') {
+    confirm[0].style.display = 'none';
+  } else {
+    confirm[0].style.display = 'inline-block';
+  }
 }
 
 function login(form, oldForm) {

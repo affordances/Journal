@@ -16,17 +16,17 @@
 
     <div class="trash">
       <% if logged_in? %>
-        <%= link_to ('<i class="fa fa-trash-o"></i>').html_safe,
-            onclick: 'showConfirm(article)',
-            remote: true %>
+        <a onclick="showConfirm('<%= article.id %>')" >
+          <i class="fa fa-trash-o"></i>
+        </a>
       <% end %>
     </div>
 
     <div class="confirm-delete">
       Sure?
-      <%= link_to 'Y', remote: true %>
+      <%= link_to 'Y', article_path(article), method: :delete, remote: true %>
       /
-      <%= link_to 'N', onclick: 'this.style.display = "none"', remote: true %>
+      <a onclick="showConfirm('<%= article.id %>')">N</a>
     </div>
 
   </div>

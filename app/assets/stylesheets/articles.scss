@@ -393,6 +393,7 @@ input[type="text"]:focus {
 
 .confirm-delete {
   display: none;
+  word-spacing: 3px;
 }
 
 .article {
@@ -428,6 +429,7 @@ a, a:visited {
 
 a:hover {
   color: #5D6E69;
+  cursor: pointer;
 }
 
 .back {
