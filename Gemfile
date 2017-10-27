@@ -33,6 +33,8 @@ gem 'font-awesome-rails'
 
 gem 'authenticate'
 
+gem 'will_paginate'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -14,6 +14,14 @@
 //= require jquery_ujs
 //= require_tree .
 
+window.onload = function() {
+  var tags = document.getElementById('new_article_tags');
+
+  if (tags) {
+    allowTagEditing(tags);
+  }
+}
+
 function showConfirm(article) {
   var el = document.getElementById(article);
   var confirm = el.getElementsByClassName('confirm-delete');
@@ -71,14 +79,6 @@ function formatTags(tags) {
     }
   }
   return newTags;
-}
-
-window.onload = function() {
-  var tags = document.getElementById('new_article_tags');
-
-  if (tags) {
-    allowTagEditing(tags);
-  }
 }
 
 function allowTagEditing(tags) {

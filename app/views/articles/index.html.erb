@@ -12,12 +12,11 @@
       <% end %>
     </div>
 
-
     <div id="articles">
-      <% @articles.each do |article| %>
-        <%= render partial: 'article', locals: { article: article } %>
-      <% end %>
+      <%= render @articles %>
     </div>
+
+    <%= will_paginate @articles %>
 
   </div>
 
