@@ -13,12 +13,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # def delete_content
-  #   respond_to do |format|
-  #     format.js
-  #   end
-  # end
-
   def index
     @articles = Article.order("created_at DESC").paginate(page: params[:page], per_page: 20)
 
@@ -52,7 +46,11 @@ class ArticlesController < ApplicationController
         format.js {}
       end
     else
-      redirect_to action: 'index'
+      respond_to do |format|
+        format.js {
+          render js: 'buttonPatch("new_article_button");'
+        }
+      end
     end
   end
 

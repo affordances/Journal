@@ -33,10 +33,7 @@ function showConfirm(article) {
   }
 }
 
-function login(form, oldForm) {
-  if (oldForm) {
-    document.getElementById(oldForm).style.display = 'none';
-  }
+function login(form) {
 
   var overlay = document.getElementById('overlay');
   var form = document.getElementById(form);
@@ -63,9 +60,12 @@ function checkForEntry(textarea, button) {
 }
 
 function buttonPatch(button) {
+  console.log(button);
+
   if (button == 'new_article_button') {
     setTimeout(function () {
       document.getElementById(button).disabled = true;
+      document.getElementById('article_text').value = '';
     }, 0);
   }
 }

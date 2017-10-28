@@ -1,19 +1,5 @@
 <%= form_for @article, remote: true do |form| %>
 
-  <!-- <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %> -->
-
   <%= form.text_area :text, onkeyup: 'checkForEntry(this, ' +
       (@article.id ? @article.id.to_s : '"new_article_button"') + ')' %>
 
