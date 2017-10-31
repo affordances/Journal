@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171018005312) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.text     "text"
     t.datetime "created_at", null: false
@@ -23,15 +26,15 @@ ActiveRecord::Schema.define(version: 20171018005312) do
     t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_taggings_on_article_id"
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["article_id"], name: "index_taggings_on_article_id", using: :btree
+    t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_tags_on_name", unique: true
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,9 +51,11 @@ ActiveRecord::Schema.define(version: 20171018005312) do
     t.datetime "last_access_at"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["password_reset_token"], name: "index_users_on_password_reset_token"
-    t.index ["session_token"], name: "index_users_on_session_token"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["password_reset_token"], name: "index_users_on_password_reset_token", using: :btree
+    t.index ["session_token"], name: "index_users_on_session_token", using: :btree
   end
 
+  add_foreign_key "taggings", "articles"
+  add_foreign_key "taggings", "tags"
 end
