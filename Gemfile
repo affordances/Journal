@@ -31,9 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
 
-gem 'authenticate'
-
 gem 'will_paginate'
+
+gem 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -102,70 +102,6 @@ body {
   padding: 12px 32px;
 }
 
-#signup-form {
-  display: none;
-  position: fixed;
-  border-radius: 5px;
-  top: 50%;
-  left: 50%;
-  background: white;
-  width: 300px;
-  height: 400px;
-  margin-left: -150px;
-  margin-top: -200px;
-  z-index: 200;
-  padding: 0 !important;
-}
-
-#signup-form form {
-  padding: 35px;
-}
-
-#signup-form input {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-#signup-form a {
-  font-weight: 400;
-}
-
-#signup-form .sign-in-button {
-  padding: 12px 32px;
-}
-
-#password-form {
-  display: none;
-  position: fixed;
-  border-radius: 5px;
-  top: 50%;
-  left: 50%;
-  background: white;
-  width: 300px;
-  height: 400px;
-  margin-left: -150px;
-  margin-top: -200px;
-  z-index: 200;
-  padding: 0 !important;
-}
-
-#password-form form {
-  padding: 35px;
-}
-
-#password-form input {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-#password-form a {
-  font-weight: 400;
-}
-
-#password-form .sign-in-button {
-  padding: 12px 32px;
-}
-
 .login-header {
   text-align: center;
   font-size: 25px;
@@ -210,14 +146,6 @@ body {
 
 .sign-in-button:hover {
   background-color: #6DD87B;
-}
-
-.password-link {
-  font-weight: 100;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 40px;
-  font-size: 12px;
 }
 
 .archive-header {
