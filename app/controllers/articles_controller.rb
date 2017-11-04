@@ -89,6 +89,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:text, :all_tags)
+    params.require(:article).permit(:author_id, :text, :all_tags)
   end
 end

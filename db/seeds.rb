@@ -23,7 +23,7 @@ articles_count = 100
 time_ago = 2000
 
 articles_count.times do
-  article = Article.create(text: text)
+  article = Article.create(author_id: 1, text: text)
   article.update_attribute :created_at, time_ago.days.ago
   time_ago -= 20
 end

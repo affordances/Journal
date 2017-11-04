@@ -3,14 +3,12 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, uniqueness: true
 
-  # has_many(
-  #  :publications,
-  #  class_name: :Publication,
-  #  foreign_key: :owner_id,
-  #  primary_key: :id
-  # )
-  #
-  # has_many :articles
+  has_many(
+   :articles,
+   class_name: :Article,
+   foreign_key: :author_id,
+   primary_key: :id
+  )
 
   attr_reader :password
 
