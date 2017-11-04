@@ -7,7 +7,7 @@
     </div>
 
     <div id="form">
-      <% if logged_in? && @articles.current_page == 1 %>
+      <% if signed_in? && @articles.current_page == 1 %>
         <%= render partial: 'form', locals: { remote: false } %>
       <% end %>
     </div>

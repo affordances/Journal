@@ -8,14 +8,14 @@
     </div>
 
     <div class="pencil">
-      <% if logged_in? %>
+      <% if signed_in? %>
         <%= link_to ('<i class="fa fa-pencil"></i>').html_safe,
             edit_article_path(article), remote: true %>
         <% end %>
     </div>
 
     <div class="trash">
-      <% if logged_in? %>
+      <% if signed_in? %>
         <a onclick="showConfirm('<%= article.id %>')" >
           <i class="fa fa-trash-o"></i>
         </a>

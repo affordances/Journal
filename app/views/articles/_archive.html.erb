@@ -3,7 +3,7 @@
 </div>
 
 <div id="sign-in-link">
-  <% if logged_in? %>
+  <% if signed_in? %>
     <%= link_to "Sign out", sign_out_path %>
   <% else %>
     <%= link_to "Sign in", new_session_path, onclick: 'login("login-form")', remote: true %>
