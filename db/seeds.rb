@@ -10,9 +10,6 @@ User.create(email: 'guest@website.com', password: 'password')
 
 text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id velit odio. Aliquam a euismod risus, id gravida dui. Nullam interdum bibendum nunc. Fusce molestie mi eu sodales iaculis. Quisque nec nunc turpis. Integer dignissim ipsum vel quam ornare condimentum. Aliquam erat volutpat. Pellentesque facilisis tristique libero vitae luctus. Quisque consequat congue leo vel porta. Ut lorem tortor, blandit vel semper et, venenatis id diam.'
 
-# tags = ['#good', '#bad', '#up', '#down', '#right', '#left',
-#         '#fast', '#slow', '#inside', '#outside']
-
 tags = ['#latin', '#extremely_latin', '#very_latin']
 
 tags.each do |tag|

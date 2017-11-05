@@ -112,9 +112,9 @@ function allowTagEditing(tags) {
 }
 
 function tagMissing(article_el, tag) {
-  var article_els = article_elt.querySelectorAll('.tags a');
+  var article_els = article_el.querySelectorAll('.tags a');
   var found_tag = true;
-  for (var i = 0; i < a_elts.length; i++) {
+  for (var i = 0; i < article_els.length; i++) {
     if (article_els[i].innerText === tag) {
       found_tag = false;
     }
