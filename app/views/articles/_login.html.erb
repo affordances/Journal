@@ -1,17 +1,7 @@
-<%= form_for :user, url: session_path do |form| %>
+<%= form_for :user, url: new_session_path, method: :get do |form| %>
 
   <div class='login-header'>
     Sign in
-  </div>
-
-  <div>
-    <%= form.text_field :email, type: 'email', placeholder: 'Email',
-        class: 'sign-in-field' %>
-  </div>
-
-  <div>
-    <%= form.password_field :password, placeholder: 'Password',
-        class: 'sign-in-field' %>
   </div>
 
   <div>
