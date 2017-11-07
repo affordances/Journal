@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def self.new_guest
     new(email: "#{Time.now}@website.com",
-        password: 'bogus')
+        password: 'bogus_password')
   end
 
   def move_to(user)
