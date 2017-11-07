@@ -14,6 +14,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  def self.new_guest
+    new(email: "#{Time.now}@website.com",
+        password: 'bogus')
+  end
+
+  def move_to(user)
+    articles.update_all(token: user.id)
+  end
+
   def self.find_by_credentials(user_params)
     user = User.find_by_email(user_params[:email])
     user.try(:is_password?, user_params[:password]) ? user : nil
