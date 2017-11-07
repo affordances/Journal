@@ -6,12 +6,12 @@
 
   <div>
     <%= form.text_field :email, type: 'email', placeholder: 'Email',
-        class: 'sign-in-field' %>
+        value: 'guest@website.com', class: 'sign-in-field', readonly: true %>
   </div>
 
   <div>
     <%= form.password_field :password, placeholder: 'Password',
-        class: 'sign-in-field' %>
+        value: 'password', class: 'sign-in-field', readonly: true %>
   </div>
 
   <div>
@@ -19,3 +19,12 @@
   </div>
 
 <% end %>
+
+<!-- <script>
+$('.demo').click(function(event){
+   event.preventDefault();
+   $("input[name='user[email]']").val('guest');
+   $("input[name='user[password]']").val('password');
+   $('.login').click();
+ })
+</script> -->

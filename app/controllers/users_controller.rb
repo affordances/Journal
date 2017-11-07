@@ -3,10 +3,9 @@ class UsersController < ApplicationController
   def new; end
 
   def create
-    @user = params[:user] ? User.new(user_params) : User.new_guest
+    @user = User.new(user_params)
 
     if @user.save
-      current_user.move_to(@user) if current_user && current_user.guest?
       sign_in!(@user)
       redirect_back_or url_after_create
     end
