@@ -1,24 +1,18 @@
-# README
+# Journal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Take a tour!][heroku]
 
-Things you may want to cover:
+[heroku]: https://myjournalapp.herokuapp.com/
 
-* Ruby version
+## Journal is an ultra-minimalist blogging platform for a single user, featuring OkCupid-style composing and editing, and Tumblr-style tagging.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Coming soon
+- [ ] Mobile version
+- [ ] Full JS history and page refresh
+- [ ] Default text for empty archives
+- [ ] Ellipses for long tags in tag archive
+- [ ] Tag editing
+- [ ] Tag search
+- [ ] Tag autocomplete
+- [ ] Styling toolbar
+- [ ] Draft/hide option
