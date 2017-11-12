@@ -10,7 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container">
+
+      <%= yield %>
+
+      <%= render partial: 'articles/sidebar' %>
+
+      <div id="overlay"></div>
+
+      <div id="login-form">
+        <%= render partial: 'articles/login' %>
+      </div>
+
+    </div>
   </body>
 
 </html>

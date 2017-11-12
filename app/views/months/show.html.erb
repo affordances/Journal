@@ -1,41 +1,15 @@
-<div id="container">
+<div id="articles-and-form-container">
 
-  <div id="articles-and-form-container">
+  <%= render partial: 'articles/header' %>
 
-    <div id="header">
-        <%= link_to 'JOURNAL', articles_path %>
-    </div>
-
-    <div class="archive-view-header">
-      <%= @month.strftime('%B %Y') %>
-    </div>
-
-    <div id="articles">
-      <%= render @articles %>
-    </div>
-
-    <%= will_paginate @articles %>
-
+  <div class="archive-view-header">
+    <%= @month.strftime('%B %Y') %>
   </div>
 
-  <div id="archive-and-tags-container">
-
-    <div id="archive">
-      <%= render partial: 'articles/archive' %>
-    </div>
-
-    <div id="tag-box">
-      <%= render partial: 'articles/tags' %>
-    </div>
-
+  <div id="articles">
+    <%= render @articles %>
   </div>
 
-  <div class="clear"></div>
-
-  <div id="overlay"></div>
-
-  <div id="login-form">
-    <%= render partial: 'articles/login' %>
-  </div>
+  <%= will_paginate @articles %>
 
 </div>
