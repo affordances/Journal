@@ -4,9 +4,59 @@
 
 @import "font-awesome";
 
+// colors
+$light-green: #F0F3F7;
+$bright-green: #54C271;
+$dark-bright-green: #6DD87B;
+$medium-green: #859E96;
+$grey-green: #C2C6CF;
+
+// breakpoints
+$breakpoint-mobile: 750px;
+
+// font
+$font-family: 'Roboto', sans-serif;
+$font-size-large: 30px;
+$font-size-medium-large: 25px;
+$font-size-regular: 16px;
+$font-size-small: 14px;
+$font-weight-light: 400;
+$font-weight-lighter: 100;
+
+// mixins
+@mixin border-box {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-bo‌​x-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+@mixin input {
+  @include border-box;
+  width: 100%;
+  border: 1px solid $grey-green;
+  border-radius: 5px;
+  padding: 20px;
+  display: block;
+  resize: none;
+
+  &:focus {
+    border: 1px solid #B2C6EF;
+    outline: none;
+  }
+}
+
+@mixin button {
+  outline: none;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+// styles
 body {
-  background-color: #F0F3F7;
-  font-family: 'Roboto', sans-serif;
+  background-color: $light-green;
+  font-family: $font-family;
   margin: 0;
 }
 
@@ -15,31 +65,44 @@ body {
 }
 
 #container {
+  @include border-box;
   overflow: hidden;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-bo‌​x-sizing: border-box;
-  -ms-box-sizing: border-box;
-  margin-top: 20px;
+  padding: 20px 30px;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  align-items: stretch;
+  justify-content: space-between;
+
+  @media screen and (min-width: 850px) {
+    padding: 20px 100px;
+  }
 }
 
 #header {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: $font-size-large;
   letter-spacing: 10px;
 }
 
 #articles-and-form-container {
-  width: 50%;
-  float: left;
-  margin-left: 100px;
+  flex-grow: 1;
+
+  @media screen and (min-width: $breakpoint-mobile) {
+    max-width: 50vw;
+  }
 }
 
 #archive-and-tags-container {
   width: 325px;
-  float: right;
-  margin-right: 100px;
+  margin-left: 20px;
+  flex-shrink: 0;
+  display: none;
+
+  @media screen and (min-width: $breakpoint-mobile) {
+    display: block;
+  }
 }
 
 #tag-box {
@@ -52,10 +115,8 @@ body {
 }
 
 #sign-in-link {
-  display: inline-block;
-  float: right;
-  padding-top: 28px;
-  padding-right: 15px;
+  font-size: $font-size-regular;
+  margin-right: 5px;
 }
 
 #overlay {
@@ -63,11 +124,13 @@ body {
   position: fixed;
   top: 0;
   bottom: 0;
+  right: 0;
+  left: 0;
   background: #999;
   width: 100%;
   height: 100%;
   opacity: 0.8;
-  z-index: 100;
+  z-index: 1;
 }
 
 #login-form {
@@ -81,82 +144,70 @@ body {
   height: 285px;
   margin-left: -150px;
   margin-top: -200px;
-  z-index: 200;
+  z-index: 2;
   padding: 0 !important;
-}
 
-#login-form form {
-  padding: 35px;
-}
+  form {
+    padding: 35px;
+  }
 
-#login-form input {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
+  input {
+    font-family: $font-family;
+    font-weight: $font-weight-light;
+  }
 
-#login-form a {
-  font-weight: 400;
-}
+  a {
+    font-weight: $font-weight-light;
+  }
 
-#login-form .sign-in-button {
-  padding: 12px 32px;
+  .sign-in-button {
+    padding: 12px 32px;
+  }
 }
 
 .login-header {
   text-align: center;
-  font-size: 25px;
+  font-size: $font-size-medium-large;
   padding-bottom: 30px;
 }
 
 .sign-in-field {
+  @include input;
   height: 40px;
-  width: 100%;
   padding: 0 10px;
-  border: 1px solid #C2C6CF;
-  border-radius: 5px;
   margin-bottom: 10px;
-  resize: none;
-  -webkit-box-sizing: border-box;
-  display: block;
-}
-
-.sign-in-field:focus {
-  outline: none;
-  border: 1px solid #B2C6EF;
 }
 
 .sign-in-button {
+  @include border-box;
+  @include button;
   height: 45px;
   width: 100%;
-  background-color: #54C271;
+  background-color: $bright-green;
   padding: 10px 32px;
   margin-top: 20px;
   color: white !important;
-  outline: none;
-  border-radius: 3px;
   border: none;
-  text-align: center;
-  text-decoration: none !important;
   display: inline-block;
-  font-size: 16px;
-  font-weight: 100;
-  -webkit-box-sizing: border-box;
+  font-size: $font-size-regular;
+  font-weight: $font-weight-lighter;
   display: block;
-}
 
-.sign-in-button:hover {
-  background-color: #6DD87B;
+  &:hover {
+    background-color: $dark-bright-green;
+  }
 }
 
 .archive-header {
-  display: inline-block;
-  font-size: 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+  font-size: $font-size-medium-large;
 }
 
 .archive-view-header {
-  font-size: 30px;
+  font-size: $font-size-large;
   padding-top: 10px;
   margin-bottom: 20px;
 }
@@ -183,13 +234,9 @@ body {
 }
 
 .tags-header {
-  font-size: 25px;
+  font-size: $font-size-medium-large;
   padding-top: 20px;
   padding-bottom: 25px;
-}
-
-.clear {
-  clear: both;
 }
 
 form {
@@ -198,102 +245,84 @@ form {
 }
 
 textarea {
-  width: 100%;
+  @include input;
   height: 150px;
-  border: 1px solid #C2C6CF;
-  border-color: #C2C6CF #C2C6CF white #C2C6CF;
-  border-radius: 5px 5px 0 0;
-  font-size: 16px;
-  resize: none;
-  padding: 20px 20px;
-  font-weight: 100;
-  -webkit-box-sizing: border-box;
-  display: block;
+  border-bottom-color: white;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: $font-size-regular;
   line-height: 150%;
-}
+  padding: 20px;
+  font-weight: $font-weight-lighter;
 
-textarea:focus {
-  border: 1px solid #B2C6EF;
-  border-color: #C2C6CF #C2C6CF white #C2C6CF;
-  font-weight: 100;
-  outline: none;
+  &:focus {
+    border-color: $grey-green;
+    border-bottom-color: white;
+    font-weight: $font-weight-lighter;
+  }
 }
 
 input[type="text"] {
-  width: 100%;
+  @include input;
   height: 20px;
-  border: 1px solid #C2C6CF;
-  border-color: white #C2C6CF #C2C6CF #C2C6CF;
-  border-radius: 0 0 5px 5px;
+  border-top-color: white;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
   margin-top: -1px;
-  font-size: 14px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  resize: none;
-  font-weight: 100;
-  -webkit-box-sizing: border-box;
-  display: block;
-  color: #859E96;
-}
+  font-size: $font-size-small;
+  color: $medium-green;
+  padding: 20px;
+  font-weight: $font-weight-lighter;
 
-input[type="text"]:focus {
-  border: 1px solid #B2C6EF;
-  border-color: white #C2C6CF #C2C6CF #C2C6CF;
-  outline: none;
+  &:focus {
+    border-color: $grey-green;
+    border-top-color: white;
+  }
 }
 
 ::placeholder {
-  color: #859E96;
+  color: $medium-green;
 }
 
 .save-button {
+  @include button;
   width: 120px;
-  background-color: #54C271;
+  background-color: $bright-green;
   color: white;
-  outline: none;
-  border-radius: 3px;
   border: none;
   padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  font-weight: 100;
+  font-size: $font-size-regular;
+  font-weight: $font-weight-lighter;
   margin-right: 10px;
+
+  &:hover {
+    background-color: $dark-bright-green;
+    color: #ECFAEF;
+  }
+
+  &:disabled {
+    background-color: #E6E9EE;
+    color: $medium-green;
+  }
 }
+
 
 .cancel-button {
+  @include button;
   width: 120px;
-  background-color: #F0F3F7;
+  background-color: $light-green;
   color: #202327;
-  outline: none;
-  border-radius: 3px;
-  border: #C2C6CF;
+  border: 1px solid $grey-green;
   padding: 15px 32px;
-  border-style: solid;
-  border-width: 1px;
-  text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  font-weight: 100;
-}
+  font-size: $font-size-regular;
+  font-weight: $font-weight-lighter;
 
-.save-button:hover {
-  background-color: #6DD87B;
-  color: #ECFAEF;
-}
-
-.save-button:disabled {
-  background-color: #E6E9EE;
-  color: #859E96;
-}
-
-.cancel-button:hover {
-  background-color: #E8EAEF;
-  color: black;
+  &:hover {
+    background-color: #E8EAEF;
+    color: black;
+  }
 }
 
 .buttons {
@@ -330,14 +359,12 @@ input[type="text"]:focus {
   padding-bottom: 20px;
   padding-right: 20px;
   line-height: 150%;
-}
 
-.article:hover .pencil {
-  visibility: visible;
-}
-
-.article:hover .trash {
-  visibility: visible;
+  &:hover {
+    .pencil, .trash {
+      visibility: visible;
+    }
+  }
 }
 
 .article-content {
@@ -347,17 +374,22 @@ input[type="text"]:focus {
 }
 
 .tags {
-  font-size: 14px;
+  font-size: $font-size-small;
 }
 
-a, a:visited {
-  color: #859E96;
+a {
+  color: $medium-green;
   text-decoration: none;
-}
 
-a:hover {
-  color: #5D6E69;
-  cursor: pointer;
+  &:visited {
+    color: $medium-green;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: #5D6E69;
+    cursor: pointer;
+  }
 }
 
 .back {
@@ -368,6 +400,6 @@ a:hover {
 .pagination {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   word-spacing: 10px;
 }
