@@ -1,13 +1,12 @@
 <div class="archive-header">
   Archive
-</div>
-
-<div id="sign-in-link">
-  <% if signed_in? %>
-    <%= link_to "Sign out", session_url, method: :delete %>
-  <% else %>
-    <%= link_to "Sign in", session_path, onclick: 'login("login-form")', remote: true %>
-  <% end %>
+  <div id="sign-in-link">
+    <% if signed_in? %>
+      <%= link_to "Sign out", session_url, method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", session_path, onclick: 'login("login-form")', remote: true %>
+    <% end %>
+  </div>
 </div>
 
 <% @archive.each do |year, articles| %>
